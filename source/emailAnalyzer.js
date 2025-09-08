@@ -6,6 +6,7 @@
  * 1. emailCount: количество электронных адресов в строке.
  * 2. uniqueEmails: массив уникальных электронных адресов, найденных в строке.
  * 3. mostFrequentEmail: электронный адрес, который встречается чаще всего (если несколько адресов имеют одинаковую частоту, вернуть любой из них).
+ * @param emails - строка, содержащая имейлы
  * @const email_bank - список слов в строке полученной на входе
  * @const eemailRegex - шаблон, под который попадут только корректные имейлы
  * @const validEmails - список валидных имейлов
@@ -32,7 +33,7 @@ function emailAnalyzer(emails) {
         }
     }
 
-    const uniqueEmails = [...new Set(validEmails.map(item => item.toLowerCase()))]; // делаем сет из списка чтобы получить только уникальные значения
+    const uniquисeEmails = [...new Set(validEmails.map(item => item.toLowerCase()))]; // делаем сет из списка чтобы получить только уникальные значения
 
     const mostFrequentEmail = ""
     if (validEmails.length > 0) {
