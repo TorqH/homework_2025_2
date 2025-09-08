@@ -6,11 +6,11 @@
  * 1. emailCount: количество электронных адресов в строке.
  * 2. uniqueEmails: массив уникальных электронных адресов, найденных в строке.
  * 3. mostFrequentEmail: электронный адрес, который встречается чаще всего (если несколько адресов имеют одинаковую частоту, вернуть любой из них).
- * @param email_bank - список слов в строке полученной на входе
- * @param eemailRegex - шаблон, под который попадут только корректные имейлы
- * @param validEmails - список валидных имейлов
- * @param uniqueEmails - список уникальных имейлов
- * @param mostFrequentEmail - строка, самый часто встречающийся имейл
+ * @const email_bank - список слов в строке полученной на входе
+ * @const eemailRegex - шаблон, под который попадут только корректные имейлы
+ * @const validEmails - список валидных имейлов
+ * @const uniqueEmails - список уникальных имейлов
+ * @const mostFrequentEmail - строка, самый часто встречающийся имейл
  * 
  * @example
  * emailAnalyzer("Мой email: user@example.com.");
@@ -34,7 +34,7 @@ function emailAnalyzer(emails) {
 
     const uniqueEmails = [...new Set(validEmails.map(item => item.toLowerCase()))]; // делаем сет из списка чтобы получить только уникальные значения
 
-    let mostFrequentEmail = ""
+    const mostFrequentEmail = ""
     if (validEmails.length > 0) {
         const frequency = validEmails.reduce((acc, item) => {   // делаем список чисел которые обозначают количество появлений каждого..
             acc[item] = (acc[item] || 0) + 1;                  // ..отдельного значения в списке
