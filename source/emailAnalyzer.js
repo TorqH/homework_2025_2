@@ -23,7 +23,7 @@
  */
 function emailAnalyzer(emails) {
     const email_bank = (emails.replace(/\.$/, '')).split(/[;,\s]+/); // распарсить строку которую нам передали на ввод, чтобы получить список слов
-    const emailRegex = /[^\s@,\.;\\]+@[^\s@,\.;\\]+\.[^\s@,\.;\\]+$/; // описываем шаблон, под который попадут только корректные имейлы
+    const emailRegex = /[^\s@,.;\\]+@[^\s@,.;\\]+\.[^\s@,.;\\]+$/; // описываем шаблон, под который попадут только корректные имейлы
     const validEmails = []    // создаем пустой список, в который потом положим все имейлы прошедшие проверку на валидность формата
 
     for (let mail of email_bank) {  // проходимся по всем элементам списка и смотрим, что из этого является валидными имейлами
@@ -33,9 +33,9 @@ function emailAnalyzer(emails) {
         }
     }
 
-    const uniquисeEmails = [...new Set(validEmails.map(item => item.toLowerCase()))]; // делаем сет из списка чтобы получить только уникальные значения
+    const uniqueEmails = [...new Set(validEmails.map(item => item.toLowerCase()))]; // делаем сет из списка чтобы получить только уникальные значения
 
-    const mostFrequentEmail = ""
+    let mostFrequentEmail = ""
     if (validEmails.length > 0) {
         const frequency = validEmails.reduce((acc, item) => {   // делаем список чисел которые обозначают количество появлений каждого..
             acc[item] = (acc[item] || 0) + 1;                  // ..отдельного значения в списке
