@@ -33,7 +33,8 @@ QUnit.module("Тестируем функцию emailAnalyzer", function() {
             mostFrequentEmail: ""
         });
     });
-    QUnit.test("Работает правильно при передаче неверного формата данных - пустой строки", function(assert) {
+
+	QUnit.test("Работает правильно при передаче неверного формата данных - пустой строки", function(assert) {
         const input = "";
         const result = emailAnalyzer(input);
 
@@ -99,5 +100,3 @@ QUnit.module("Тестируем функцию emailAnalyzer", function() {
         });
     });
 });
-
-
