@@ -88,17 +88,20 @@ function emailAnalyzer(emails) {
     const emailRegex = /[\w\-_]+@[\w\-_]+(\.[\w\-_]+)+$/; // описываем шаблон, под который попадут только корректные имейлы
     const validEmails = []; // создаем пустой список, в который потом положим все имейлы прошедшие проверку на валидность формата
     let mostFrequentEmail = '';
+    const frequency = {}
     for (let mail of email_bank) {    // проходимся по всем элементам списка и смотрим, что из этого является валидными имейлами
         let isValid = emailRegex.test(mail);
         if (isValid) {
             validEmails.push(mail);
-            const frequency = validEmails.reduce((acc, item) => { // делаем список чисел которые обозначают количество появлений каждого..
-                acc[item] = (acc[item] || 0) + 1;                // ..отдельного значения в списке
-                return acc;
-                }, {});
+            if (!(mail in frequency)){
+                frequency[mail] = 1;
+            } else {
+                frequency[mail] += 1;
+            }
             mostFrequentEmail = Object.keys(frequency).reduce(
             (a,b ) => (frequency[a] > frequency[b] ? a : b) // сравниваем друг с другом значения из предыдущего списка чтобы найти самый частый элемент
             );
+            console.log(frequency)
         }
     }
 
