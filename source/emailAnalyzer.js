@@ -25,8 +25,8 @@ function emailAnalyzer(emails) {
     if (typeof emails !== 'string') {
         let wrongInfo = {
             emailCount: 0,
-            wronUniqueEmails: [],
-            wronMostFrequentEmail: ""
+            UniqueEmails: [],
+            MostFrequentEmail: ""
         }
         return wrongInfo;
     }
