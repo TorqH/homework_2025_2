@@ -26,5 +26,3 @@ function findUniqueProperties(object1, object2) {
   }
   return together;
 }
-
-console.log(findUniqueProperties({ x: 'a', y: 'A' }, { h: 20, z: '20'}))

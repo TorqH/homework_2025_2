@@ -30,10 +30,3 @@ function* fibonacciGenerator(number) {
     yield fibonacci_number;
   }
 }
-
-//для отладки:
-const generator = fibonacciGenerator(2, 3, 4);
-const resultArray = Array.from(generator);
-
-console.log(resultArray);
-console.log(generator); 
