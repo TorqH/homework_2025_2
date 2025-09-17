@@ -25,8 +25,8 @@ function emailAnalyzer(emails) {
     if (typeof emails !== 'string') {
         let wrongInfo = {
             emailCount: 0,
-            UniqueEmails: [],
-            MostFrequentEmail: ""
+            mostFrequentEmail: "",
+            uniqueEmails: [],
         }
         return wrongInfo;
     }
@@ -63,4 +63,3 @@ function emailAnalyzer(emails) {
 
     return info;
 }
-console.log(emailAnalyzer(null));

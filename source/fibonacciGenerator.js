@@ -22,7 +22,8 @@ function* fibonacciGenerator(number) {
   if (number <= 0 || typeof number !== 'number') {
     return []
   } else if (number === 1) {
-    return [0]
+    yield 0
+    return
   } else if (number > 1) {
     yield 0
     yield 1
@@ -34,3 +35,11 @@ function* fibonacciGenerator(number) {
     yield fibonacci_number;
   }
 }
+const gen = fibonacciGenerator(1);
+console.log(gen.next());
+console.log(gen.next());
+console.log(gen.next());
+console.log(gen.next());
+console.log(gen.next());
+console.log(gen.next());
+console.log(gen.next());
