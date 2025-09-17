@@ -19,10 +19,14 @@
 function* fibonacciGenerator(number) {
   let first_number = 0;
   let second_number = 1;
-  if (number > 0) {
+  if (number <= 0 || typeof number !== 'number') {
+    return []
+  } else if (number === 1) {
+    return 0
+  } else if (number > 1) {
     yield 0
     yield 1
-  }
+  } 
   for (let current_number = 1; current_number < (number-1); current_number++) {
     let fibonacci_number = first_number + second_number;
     first_number = second_number;
