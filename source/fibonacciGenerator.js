@@ -35,11 +35,3 @@ function* fibonacciGenerator(number) {
     yield fibonacci_number;
   }
 }
-const gen = fibonacciGenerator(1);
-console.log(gen.next());
-console.log(gen.next());
-console.log(gen.next());
-console.log(gen.next());
-console.log(gen.next());
-console.log(gen.next());
-console.log(gen.next());
